@@ -1,0 +1,97 @@
+<mat-tab-group mat-align-tabs="start" class=".mat-tab-group">
+   
+   
+    <mat-tab label="Próximas">
+        <div fxLayout="row wrap" fxLayoutAlign="start center" class="fxL">
+            <ng-container *ngFor="let live of livesNext" style="margin: 0.5%;">
+                
+                <mat-card class="mat-card-live" 
+                fxFlex="0 1 calc(33.3% - 11px)"
+                fxFlex.lt-md="0 1 calc(50% - 11px)"
+                fxFlex.lt-sm="100%"
+                >
+                
+                    <mat-card-title class="mat-card-title-live">
+                        <div class="row">
+                            <p>
+                                <span style="font-size: 1.1rem; font-weight: bold;" fxFlex="70" fxLayoutAlign="start center">{{live.liveName}}</span>
+                                <span fxFlex="5"></span>
+                                <mat-chip class="mat-chip-date" fxFlex="25" fxLayoutAlign="center center">
+                                    <span style="color: white; font-size: 0.7rem;" >{{live.liveDate | localDateTime}}</span></mat-chip>
+                            </p>
+                            <p style="font-size: 0.7rem;">
+                                <span>Canal: {{live.channelName}}</span>
+                            </p>
+                        </div>
+                    </mat-card-title>
+                    <mat-card-content fxLayoutAlign="center center">
+                          <div>
+    
+                            <iframe 
+                            width="560" 
+                            height="315" 
+                            [src]="live.urlSafe" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; 
+                            encrypted-media; gyroscope; 
+                            picture-in-picture" 
+                            allowfullscreen>
+                            </iframe>
+    
+    
+                          </div>
+                    </mat-card-content>
+                  </mat-card>
+    
+            </ng-container>
+        </div>
+    </mat-tab>
+
+
+    
+    <mat-tab label="Realizadas"> 
+        <div fxLayout="row wrap" fxLayoutAlign="start center" class="fxL">
+        <ng-container *ngFor="let live of livesPrevious" style="margin: 0.5%;">
+            
+            <mat-card class="mat-card-live" 
+            fxFlex="0 1 calc(33.3% - 11px)"
+            fxFlex.lt-md="0 1 calc(50% - 11px)"
+            fxFlex.lt-sm="100%"
+            >
+            
+                <mat-card-title class="mat-card-title-live">
+                    <div class="row">
+                        <p>
+                            <span style="font-size: 1.1rem; font-weight: bold;" fxFlex="70" fxLayoutAlign="start center">{{live.liveName}}</span>
+                            <span fxFlex="5"></span>
+                            
+                            <mat-chip class="mat-chip-date" fxFlex="25" fxLayoutAlign="center center">
+                                <span style="color: white; font-size: 0.7rem;" >{{live.liveDate | localDateTime}}</span></mat-chip>
+                        </p>
+                        <p style="font-size: 0.7rem;">
+                            <span>Canal: {{live.channelName}}</span>
+                        </p>
+                    </div>
+                </mat-card-title>
+                <mat-card-content fxLayoutAlign="center center">
+                      <div>
+
+                        <iframe 
+                        width="560" 
+                        height="315" 
+                        [src]="live.urlSafe" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; 
+                        encrypted-media; gyroscope; 
+                        picture-in-picture" 
+                        allowfullscreen>
+                        </iframe>
+
+
+                      </div>
+                </mat-card-content>
+              </mat-card>
+
+        </ng-container>
+    </div></mat-tab>
+  </mat-tab-group>

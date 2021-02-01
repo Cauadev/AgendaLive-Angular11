@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>New Live</h1>
+<div mat-dialog-content>
+    <form class="example-form" [formGroup]="liveForm">
+      <mat-form-field class="example-full-width">
+        <mat-label>Live Name</mat-label>
+        <input matInput formControlName="liveName" name="liveName" placeholder="Name">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Channel Name</mat-label>
+        <input matInput formControlName="channelName" name="channelName" placeholder="Channel">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Link</mat-label>
+        <input matInput formControlName="liveLink" name="liveLink" placeholder="url">
+      </mat-form-field>
+
+
+      <div fxLayout="row wrap">
+        <div fxFlex="40" fxFill fxLayoutAlign="start center">
+          <mat-form-field class="example-full-width">
+            <mat-label>Live Date</mat-label>
+            <input matInput [matDatepicker]="picker"  formControlName="liveDate" name="liveDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex></div>
+
+        <div fxFlex="40" fxFill fxLayoutAlign="start center">
+          <mat-form-field class="example-full-width">
+            <mat-label>Live Schedule</mat-label>
+            <input matInput type="time" formControlName="liveTime" name="liveTime" #time>
+          </mat-form-field>
+        </div>
+      </div>
+
+
+    </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="createLive()">Create Live</button>
+  <button mat-button color="warn" (click)="cancel()">Cancel</button>
+</div>

@@ -1,0 +1,42 @@
+.mat-tab-group{
+    padding-top: 40px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.fxL{
+    padding: 2%;
+}
+
+/* mat-card.mat-card.mat-focus-indicator.mat-card-live.ng-star-inserted{
+    margin: 0.2%;
+} */
+
+
+.mat-card-live{
+    border: 1px solid #CFD8DC; 
+    border-radius: 4px 3px 6px / 2px 4px; 
+    padding-top: 15px; 
+    padding-left: 0%; 
+    padding-right: 0%; 
+    padding-bottom: 0%;
+    margin: 5px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.mat-card-title-live{
+    padding-left:10px; 
+    padding-top: 0px; 
+    padding-right: 15px; 
+    margin-bottom: 0px; 
+    min-height: 70px;
+}
+
+.mat-chip-date{
+    background-color: #10002b !important; 
+    color: black !important;
+    border-radius: 5px;
+}
